@@ -13,4 +13,4 @@ blocks:
             - sem-version python 3.12
             - checkout
             - python -m pip install --upgrade pip
-            - python webautomation.py
+            - python web_automation.py

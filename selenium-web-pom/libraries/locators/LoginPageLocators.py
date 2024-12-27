@@ -1,0 +1,5 @@
+CSS_LOGIN_CONTAINER  =   "css:div[class='orangehrm-login-container']"
+CSS_TXT_USERNAME     =   CSS_LOGIN_CONTAINER + " input[name='username']"
+CSS_TXT_PASSWORD     =   CSS_LOGIN_CONTAINER + " input[name='password']"
+CSS_BTN_LOGIN        =   CSS_LOGIN_CONTAINER + " button[class$='orangehrm-login-button']"
+CSS_LOGIN_ERROR      =   "css:div[class='orangehrm-login-error'] div[class='oxd-alert-content oxd-alert-content--error'] p"

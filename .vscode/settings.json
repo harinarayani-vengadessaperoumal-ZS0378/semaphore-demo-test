@@ -1,0 +1,6 @@
+{
+    "robot.pythonpath": [
+        "${workspaceFolder}/selenium-api",
+        "${workspaceFolder}/selenium-web-pom",
+    ]
+}

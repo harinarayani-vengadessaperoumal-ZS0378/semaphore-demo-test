@@ -1,0 +1,7 @@
+XPATH_TIME_SIDEMENU               =   "xpath://a[contains(@href,'viewTimeModule')]"
+XPATH_TIMESHEET_CONTAINER         =   "//div[@class='orangehrm-background-container']"
+XPATH_TIMESHEET_PENDING_ACTION    =   "xpath://div[@class='orangehrm-header-container']//h6"
+XPATH_EMPLOYEE_RECORD_TABLE       =   "xpath://div[@class='oxd-table-cell oxd-padding-cell']//div[@data-v-6c07a142]"
+XPATH_TIMESHEET_HEADER            =   "//span[@class='oxd-topbar-header-breadcrumb']//h6[@class='oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module']"
+XPATH_EMPLOYEE_NAME_TABLEHEADER   =   "(//div[@class='oxd-table-header-cell oxd-padding-cell oxd-table-th'][@role='columnheader'])[1]"
+XPATH_EMPLOYEE_TIMEPERIOD_TABLEHEADER   =   "(//div[@class='oxd-table-header-cell oxd-padding-cell oxd-table-th'][@role='columnheader'])[2]"

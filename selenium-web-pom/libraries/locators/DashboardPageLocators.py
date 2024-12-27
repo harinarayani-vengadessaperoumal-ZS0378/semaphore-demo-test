@@ -1,0 +1,6 @@
+CSS_GRID_DASHBOARD                =   "css:div[class='oxd-grid-3 orangehrm-dashboard-grid']"
+CSS_DASHBOARD_WIDGETS             =   "css:div[class$='orangehrm-dashboard-widget']"
+CSS_ATTENDANCE_WIDGET             =   "css:div[class='orangehrm-attendance-card']"
+CSS_ICON_ATTENDANCE_STOPWATCH     =   "css:i[class='oxd-icon bi-stopwatch']"
+XPATH_WIDGETS_HEADERS             =   "//div[@class='orangehrm-dashboard-widget-name']"
+XPATH_VARIABLE_BTN_QUICK_LAUNCH   =   "//button[@title='{VARIABLE}']"

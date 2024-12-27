@@ -1,0 +1,5 @@
+username: Admin
+password: admin123
+privatekey: dfhfdgsrea
+orangehrm_app_url: https://robotframework.org/
+mode: head

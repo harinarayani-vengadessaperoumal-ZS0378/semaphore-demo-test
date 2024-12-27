@@ -1,0 +1,5 @@
+**/__pycache__
+test-results/
+tests-results/
+results/
+.scannerwork/

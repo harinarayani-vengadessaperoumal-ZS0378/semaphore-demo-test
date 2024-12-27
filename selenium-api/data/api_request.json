@@ -1,0 +1,6 @@
+{
+    "CreateToken_Request":{
+        "username":"admin",
+        "password":"$$$$"
+    }
+}

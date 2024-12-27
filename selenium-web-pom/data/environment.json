@@ -1,0 +1,11 @@
+{
+    "uat": {
+        "website": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
+    },
+    "sandbox": {
+        "website": "https://sandbox.example.com"
+    },
+    "prod": {
+        "website": "https://prod.example.com"
+    }
+}

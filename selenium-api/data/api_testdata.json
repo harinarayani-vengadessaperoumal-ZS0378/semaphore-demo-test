@@ -1,0 +1,39 @@
+{
+    "expectedStatuscode_OK":"200",
+    "expectedStatuscode_BadRequest":"Bad Request",
+    "expectedStatuscode_InternalServerError":"Internal Server Error",
+    "expectedStatuscode_Forbidden":"Forbidden",
+
+    "TC_001":{
+        "testData":{
+        "expectedStatuscode_OK":"200"
+        },
+        "verificationData":{
+            "sampleData":"Testing"
+        }
+    },
+    "TC_002":{
+        "testData":{
+        "expectedStatuscode_OK":"200"
+        },
+        "verificationData":{
+            "sampleData":"Testing"
+        }
+    },
+    "TC_003":{
+        "testData":{
+        "expectedStatuscode_OK":"200"
+        },
+        "verificationData":{
+            "sampleData":"Testing"
+        }
+    },
+    "TC_004":{
+        "testData":{
+        "expectedStatuscode_OK":"200"
+        },
+        "verificationData":{
+            "sampleData":"Testing"
+        }
+    }
+}

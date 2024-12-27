@@ -1,0 +1,5 @@
+CSS_HEADER_TOPBAR        =   "css:header[class='oxd-topbar']"
+CSS_HEADER_USERAREA      =   CSS_HEADER_TOPBAR   + " div[class$='oxd-topbar-header-userarea']"
+CSS_ICON_USERDROPDOWN    =   CSS_HEADER_USERAREA + " i[class$='oxd-userdropdown-icon']"
+CSS_HEADER_TITLE_TOPBAR  =   "css:div[class='oxd-topbar-header-title']"
+XPATH_LINK_LOGOUT        =   "//a[contains(@href,'logout')]"

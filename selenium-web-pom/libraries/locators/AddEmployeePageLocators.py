@@ -1,0 +1,5 @@
+XPATH_TAB_ADD_EMPLOYEE_PIM    =   "(//a[@class='oxd-topbar-body-nav-tab-item'])[2]"
+XPATH_TXT_ADD_EMPLOYEE_TABLE  =   "//h6[@class='oxd-text oxd-text--h6 orangehrm-main-title']"
+XPATH_VARIABLE_TXT_NAME       =   "//input[@placeholder='{VARIABLE} Name']"
+XPATH_BTN_SEARCH_OR_SAVE      =   "//button[@type='submit']"
+XPATH_TOAST_MESSAGE           =   "//div[@class='oxd-toast-start']"

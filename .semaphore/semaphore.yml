@@ -20,4 +20,4 @@ blocks:
         - name: Run command
           commands:
             - echo "Test"
-            - .\run.bat
+            - .//run.bat

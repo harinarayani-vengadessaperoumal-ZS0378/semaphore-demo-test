@@ -5,13 +5,19 @@ agent:
     type: f1-standard-2
     os_image: ubuntu2204
 blocks:
-  - name: Test
+  - name: Installation
     task:
       jobs:
-        - name: pytest
+        - name: Install robot framework dependencies
           commands:
             - sem-version python 3.12
             - checkout
             - python -m pip install --upgrade pip
-            - pip install -r requirements.txt
+            - pip install -r selenium-web-pom/requirements.txt
             - python web_automation.py
+  - name: Run framework
+    task:
+      jobs:
+        - name: Run command
+          commands:
+            - ./run.bat

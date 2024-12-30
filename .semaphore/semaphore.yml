@@ -19,5 +19,6 @@ blocks:
       epilogue:
         always:
           commands:
-            - cp ./selenium-web-pom/test-results/* /selenium-web-pom/test-results
-            - cp ./selenium-api/testresults/* /selenium-api/test-results
+            - touch ./selenium-web-pom/test-results/testfile.txt
+            - cp ./selenium-web-pom/test-results/* ./selenium-web-pom/test-results
+            - cp ./selenium-api/test-results/* ./selenium-api/test-results

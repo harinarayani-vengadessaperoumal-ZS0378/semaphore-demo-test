@@ -28,7 +28,7 @@ pabot --processes $PROCESSES \
       --variable "browser:$BROWSER" \
       --variable "mode:$MODE" \
       --pythonpath ./selenium-web-pom \
-      --outputdir ./selenium-web-pom/testresults \
+      --outputdir ./selenium-web-pom/test-results \
       --include "$INCLUDE_TAGS" \
       --exclude "$EXCLUDE_TAGS" \
       --listener "allure_robotframework:$ALLURE_RESULTS" \
@@ -39,7 +39,7 @@ echo "Running API Tests..."
 pabot --processes $PROCESSES \
       --testlevelsplit \
       --pythonpath ./selenium-api \
-      --outputdir ./selenium-api/testresults \
+      --outputdir ./selenium-api/test-results \
       --include "$INCLUDE_TAGS" \
       --listener "allure_robotframework:$ALLURE_RESULTS" \
       ./selenium-api/tests

@@ -21,8 +21,11 @@ ALLURE_REPORT="./output/allure-report"
 mkdir -p "$ALLURE_RESULTS"
 mkdir -p "$ALLURE_REPORT"
 
-mkdir -p ./selenium-web-pom/test-results
-mkdir -p ./selenium-api/test-results
+mkdir -p ./selenium-web-pom/testresults
+mkdir -p ./selenium-api/testresults
+
+cp -r ./selenium-web-pom/test-results/* ./selenium-web-pom/testresults
+cp -r ./selenium-api/test-results/* ./selenium-api/testresults
 
 # Run web tests with Allure reporting
 echo "Running Web Tests..."

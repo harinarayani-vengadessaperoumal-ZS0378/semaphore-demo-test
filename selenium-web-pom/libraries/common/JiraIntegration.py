@@ -286,10 +286,10 @@ def main():
     jira_config = os.path.join(os.path.abspath(Path(__file__).parent.parent.parent), 'data', 'common_config.properties')
 
     # Path to Robot Framework's UI output.xml
-    ui_output_file = os.path.join(os.path.abspath(Path(__file__).parent.parent.parent),'test-results','output.xml')
+    ui_output_file = os.path.join(os.path.abspath(Path(__file__).parent.parent.parent),'testresults','output.xml')
 
     # Path to Robot Framework's API output.xml
-    api_output_file = os.path.join(os.path.abspath(Path(__file__).parent.parent.parent.parent),'selenium-api','test-results','output.xml')
+    api_output_file = os.path.join(os.path.abspath(Path(__file__).parent.parent.parent.parent),'selenium-api','testresults','output.xml')
 
     # Initialize JIRA integration
     jira = JiraIntegration(jira_config)

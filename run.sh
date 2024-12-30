@@ -4,7 +4,7 @@
 PROCESSES=3
 
 # Specify the tags you want to include and exclude
-INCLUDE_TAGS="Smoke"
+INCLUDE_TAGS="SmokeORTC_001"
 EXCLUDE_TAGS="Disabled"
 
 # Accept browser name as a parameter or default to chrome
@@ -20,9 +20,6 @@ ALLURE_REPORT="./output/allure-report"
 # Create Allure results directory if it doesn't exist
 mkdir -p "$ALLURE_RESULTS"
 mkdir -p "$ALLURE_REPORT"
-
-mkdir -p ./selenium-web-pom/testresults
-mkdir -p ./selenium-api/testresults
 
 # Run web tests with Allure reporting
 echo "Running Web Tests..."
@@ -63,6 +60,3 @@ fi
 # Run the Python script to parse results and log to JIRA
 echo "Logging failed test cases to JIRA..."
 python ./selenium-web-pom/libraries/common/JiraIntegration.py
-
-cp -r ./selenium-web-pom/test-results/* ./selenium-web-pom/testresults
-cp -r ./selenium-api/test-results/* ./selenium-api/testresults

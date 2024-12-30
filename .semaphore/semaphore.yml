@@ -14,4 +14,6 @@ blocks:
             - checkout
             - python -m pip install --upgrade pip
             - pip install -r selenium-web-pom/requirements.txt
+            - ls -l ./run.bat
+            - chmod +x ./run.bat
             - ./run.bat

@@ -21,6 +21,9 @@ ALLURE_REPORT="./output/allure-report"
 mkdir -p "$ALLURE_RESULTS"
 mkdir -p "$ALLURE_REPORT"
 
+mkdir -p /selenium-web-pom/test-results
+mkdir -p /selenium-api/test-results
+
 # Run web tests with Allure reporting
 echo "Running Web Tests..."
 pabot --processes $PROCESSES \

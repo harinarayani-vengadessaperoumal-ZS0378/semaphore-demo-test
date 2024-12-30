@@ -4,7 +4,7 @@
 PROCESSES=3
 
 # Specify the tags you want to include and exclude
-INCLUDE_TAGS="SmokeORTC_003"
+INCLUDE_TAGS="Smoke"
 EXCLUDE_TAGS="Disabled"
 
 # Accept browser name as a parameter or default to chrome

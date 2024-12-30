@@ -24,9 +24,6 @@ mkdir -p "$ALLURE_REPORT"
 mkdir -p ./selenium-web-pom/testresults
 mkdir -p ./selenium-api/testresults
 
-cp -r ./selenium-web-pom/test-results/* ./selenium-web-pom/testresults
-cp -r ./selenium-api/test-results/* ./selenium-api/testresults
-
 # Run web tests with Allure reporting
 echo "Running Web Tests..."
 pabot --processes $PROCESSES \
@@ -66,3 +63,6 @@ fi
 # Run the Python script to parse results and log to JIRA
 echo "Logging failed test cases to JIRA..."
 python ./selenium-web-pom/libraries/common/JiraIntegration.py
+
+cp -r ./selenium-web-pom/test-results/* ./selenium-web-pom/testresults
+cp -r ./selenium-api/test-results/* ./selenium-api/testresults

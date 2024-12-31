@@ -1,6 +1,7 @@
 *** Settings ***
 Library         ExcelLibrary
 Library         ../libraries/common/Setup.py
+Variables        ../libraries/common/FilePaths.py
 
 Resource        ../resources/login_page_keywords.resource
 Resource        ../resources/utility_page_keywords.resource
@@ -17,7 +18,7 @@ Test Teardown  Close Current Excel Document
 *** Variables ***
 ${environment}          uat
 ${browser}              chrome
-${excel_file}    ${CURDIR}\\..\\data\\test_data\\test_data.xlsx 
+${excel_file}    ${exceldata_path}
 ${menu_sheet}    Menus
 ${widget_sheet}  Widgets
 ${coloumn_num}   1

@@ -17,6 +17,6 @@ blocks:
             - chmod +x run.sh
             - ./run.sh
             - artifact push workflow selenium-web-pom/test-results/report.html
-            - artifact push workflow selenium-web-pom/test-results/report.html
-            - artifact pull workflow selenium-api/test-results/report.html
+            - artifact push workflow selenium-api/test-results/report.html
+            - artifact pull workflow selenium-web-pom/test-results/report.html
             - artifact pull workflow selenium-api/test-results/report.html

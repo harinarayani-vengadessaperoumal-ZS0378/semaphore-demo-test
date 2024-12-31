@@ -16,7 +16,7 @@ blocks:
             - pip install -r selenium-web-pom/requirements.txt
             - chmod +x run.sh
             - ./run.sh
-            - artifact push workflow web-test-results
-            - artifact push workflow api-test-results
-            - artifact pull workflow web-test-results
-            - artifact pull workflow api-test-results
+            - artifact push workflow selenium-web-pom/test-result
+            - artifact push workflow selenium-web-pom/test-result
+            - artifact pull workflow selenium-api/test-results
+            - artifact pull workflow selenium-api/test-results

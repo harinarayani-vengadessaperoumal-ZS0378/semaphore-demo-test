@@ -63,7 +63,8 @@ class Setup:
         '''This method retrieves the values from YAML Config file'''
         current_dir = Path(os.getcwd())
         execution_environment = os.getenv('ENVIRONMENT', BuiltIn().get_variable_value("${environment}")) 
-        file_path = f'{current_dir}\\selenium-web-pom\\data\\{execution_environment}\\web_config.yaml'
+        #file_path = f'{current_dir}\\selenium-web-pom\\data\\{execution_environment}\\web_config.yaml'
+        file_path = os.path.join(current_dir,"selenium-web-pom","data",execution_environment,"web_config.yaml")
         
         if not os.path.exists(file_path):
             raise FileNotFoundError(f"The config file at '{file_path}' was not found.")

@@ -3,6 +3,7 @@ Library         DependencyLibrary
 Library         ../libraries/pages/AddEmployeePage.py
 Library         ../libraries/pages/DashboardPage.py
 Library         ../libraries/common/Setup.py
+Variables        ../libraries/common/FilePaths.py
 
 Resource        ../resources/employee_list_page_keywords.resource
 Resource        ../resources/login_page_keywords.resource
@@ -18,7 +19,7 @@ Test Setup      Login with Default User
 Test Teardown   Logout the User 
 
 *** Variables ***
-${json_file}    ${CURDIR}\\..\\data\\test_data\\employee.json
+${json_file}    ${employee_jsondata_path}
 ${test_id}      TC_001
 ${browser}      chrome
 ${environment}  uat

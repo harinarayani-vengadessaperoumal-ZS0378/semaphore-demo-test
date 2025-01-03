@@ -1,6 +1,7 @@
 *** Settings ***
 Library        DataDriver  file=${excel_file}  sheet_name=${sheet_name}
 Library        ../libraries/common/Setup.py
+Variables        ../libraries/common/FilePaths.py
 
 Resource       ../resources/login_page_keywords.resource
 
@@ -12,7 +13,7 @@ Test Teardown  Close The Browser
 Test Template  Validate Login Using Provided Credential
 
 *** Variables ***
-${excel_file}   ${EXECDIR}\\selenium-web-pom\\data\\test_data\\test_data.xlsx 
+${excel_file}   ${exceldata_path} 
 ${sheet_name}   Login Credentials
 ${environment}          uat
 ${browser}              chrome

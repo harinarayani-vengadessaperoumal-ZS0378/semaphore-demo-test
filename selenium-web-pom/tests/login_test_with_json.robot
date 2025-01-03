@@ -2,6 +2,7 @@
 Documentation  Test to validate login functionality using JSON Data
 
 Library        ../libraries/common/Setup.py
+Variables      ../libraries/common/FilePaths.py
 Resource       ../resources/login_page_keywords.resource
 Resource       ../resources/utility_page_keywords.resource
 Suite Setup    Run Keywords    Setting Up The Environment Variable For The Suite
@@ -14,7 +15,7 @@ Test Template  Login to Orange HRM
 *** Variables ***
 ${browser}    chrome
 ${environment}  uat
-${json_file}    ${EXECDIR}\\selenium-web-pom\\data\\test_data\\login.json
+${json_file}    ${login_jsondata_path}
 
 *** Test Cases ***
 TC_001 Login to Orange HRM  ${json_file}  TC_001

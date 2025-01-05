@@ -34,6 +34,9 @@ blocks:
         commands:
           - sem-version python 3.12
       epilogue:
+        always:
+          commands:
+            - 'echo "Browser mode : $BROWSER_MODE"'
         on_pass:
           commands:
             - echo "Installation is successfull"
@@ -59,9 +62,6 @@ blocks:
             - cache restore pip-cache ~/.cache/pip
             - chmod +x run.sh
             - ./run.sh
-      prologue:
-        commands:
-          - 'echo "Browser mode : $BROWSER_MODE"'
 after_pipeline:
   task:
     jobs:

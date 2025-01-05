@@ -40,6 +40,9 @@ blocks:
         on_fail:
           commands:
             - echo "Installation is unsuccessfull."
+      env_vars:
+        - name: BROWSER_MODE
+          value: head
   - name: Test
     task:
       epilogue:
@@ -56,6 +59,9 @@ blocks:
             - cache restore pip-cache ~/.cache/pip
             - chmod +x run.sh
             - ./run.sh
+      prologue:
+        commands:
+          - 'echo "Browser mode : $BROWSER_MODE"'
 after_pipeline:
   task:
     jobs:

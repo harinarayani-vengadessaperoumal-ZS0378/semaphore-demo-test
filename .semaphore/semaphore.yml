@@ -1,19 +1,63 @@
 version: v1.0
-name: Python
+name: Python Robot-framework Smoke test
 agent:
   machine:
     type: f1-standard-2
-    os_image: ubuntu2204
+    os_image: ubuntu2004
+execution_time_limit:
+  hours: 1
+global_job_config:
+  prologue:
+    commands:
+      - echo "Robot-Framework execution is started"
+  epilogue:
+    always:
+      commands:
+        - echo "Execution is completed"
+    on_pass:
+      commands:
+        - echo "Test Pipeline execution is successfull"
+    on_fail:
+      commands:
+        - echo "Test Pipeline execution is unsuccessfull"
 blocks:
-  - name: Installation
+  - name: Build
     task:
       jobs:
         - name: Install robot framework dependencies
           commands:
-            - sem-version python 3.12
             - checkout
             - python -m pip install --upgrade pip
             - pip install -r selenium-web-pom/requirements.txt
+      prologue:
+        commands:
+          - sem-version python 3.12
+      epilogue:
+        on_pass:
+          commands:
+            - echo "Installation is successfull"
+        on_fail:
+          commands:
+            - echo "Installation is unsuccessfull."
+  - name: Test
+    task:
+      epilogue:
+        on_pass:
+          commands:
+            - echo "Tests are executed successfully"
+        on_fail:
+          commands:
+            - echo "Error occurred while executing robot tests"
+      jobs:
+        - name: Run robot tests
+          commands:
+            - checkout
             - chmod +x run.sh
             - ./run.sh
-            - artifact push workflow selenium-web-pom/test-results/
+after_pipeline:
+  task:
+    jobs:
+      - name: Collect test results
+        commands:
+          - checkout
+          - artifact push workflow selenium-web-pom/test-results/

@@ -51,6 +51,7 @@ blocks:
       jobs:
         - name: Run robot tests
           commands:
+            - checkout
             - chmod +x run.sh
             - ./run.sh
 after_pipeline:

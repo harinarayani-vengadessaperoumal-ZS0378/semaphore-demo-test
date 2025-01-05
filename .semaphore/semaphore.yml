@@ -53,7 +53,8 @@ blocks:
         - name: Run robot tests
           commands:
             - checkout
-            - cache restore pip-cache ~/.cache/pip
+            - python -m pip install --upgrade pip
+            - pip install -r selenium-web-pom/requirements.txt
             - chmod +x run.sh
             - ./run.sh
 after_pipeline:

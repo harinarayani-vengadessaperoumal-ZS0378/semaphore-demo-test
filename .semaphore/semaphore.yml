@@ -26,10 +26,12 @@ blocks:
       jobs:
         - name: Install robot framework dependencies
           commands:
-            - checkout
+            - python -m venv .venv
+            - source .venv/bin/activate
             - python -m pip install --upgrade pip
-            - pip install --cache-dir ~/.cache/pip -r selenium-web-pom/requirements.txt
+            - pip install -r selenium-web-pom/requirements.txt
             - 'pip show robotframework-pabot || (echo "Error: robotframework-pabot not installed" && exit 1)'
+            - cache store venv-cache .venv
       prologue:
         commands:
           - sem-version python 3.12
@@ -59,8 +61,9 @@ blocks:
         - name: Run robot tests
           commands:
             - checkout
-            - cache restore pip-cache
-            - 'pip show robotframework-pabot || (echo "Error: robotframework-pabot not installed" && exit 1)'
+            - cache restore venv-cache .venv
+            - source .venv/bin/activate
+            - 'pip show robotframework-pabot || (echo "Error: robotframework-pabot not restored" && exit 1)'
             - chmod +x run.sh
             - ./run.sh
 after_pipeline:

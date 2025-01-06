@@ -28,6 +28,7 @@ blocks:
           commands:
             - checkout
             - python -m pip install --upgrade pip
+            - rm -rf ~/.cache/pip
             - pip install --cache-dir ~/.cache/pip -r selenium-web-pom/requirements.txt
             - cache store pip-cache ~/.cache/pip
       prologue:

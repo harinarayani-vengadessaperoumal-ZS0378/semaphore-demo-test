@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the number of parallel processes
-PROCESSES=1
+PROCESSES=3
 
 # Specify the tags you want to include and exclude
 INCLUDE_TAGS="SmokeORTC_001"

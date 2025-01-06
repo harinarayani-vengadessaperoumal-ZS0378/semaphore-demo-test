@@ -26,6 +26,7 @@ blocks:
       jobs:
         - name: Install robot framework dependencies
           commands:
+            - checkout
             - python -m venv .venv
             - source .venv/bin/activate
             - python -m pip install --upgrade pip

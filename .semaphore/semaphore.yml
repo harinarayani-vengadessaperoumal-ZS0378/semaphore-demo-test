@@ -28,8 +28,7 @@ blocks:
           commands:
             - checkout
             - python -m pip install --upgrade pip
-            - pip install -r selenium-web-pom/requirements.txt
-            - cache store pip-cache ~/.cache/pip
+            - pip install --cache-dir ~/.cache/pip -r selenium-web-pom/requirements.txt
       prologue:
         commands:
           - sem-version python 3.12
@@ -60,6 +59,7 @@ blocks:
           commands:
             - checkout
             - cache restore pip-cache
+            - 'pip show robotframework-pabot || (echo "Error: robotframework-pabot not installed" && exit 1)'
             - chmod +x run.sh
             - ./run.sh
 after_pipeline:

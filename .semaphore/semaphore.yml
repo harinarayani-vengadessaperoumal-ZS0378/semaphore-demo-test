@@ -21,56 +21,25 @@ global_job_config:
       commands:
         - echo "Test Pipeline execution is unsuccessfull"
 blocks:
-  - name: Build
+  - name: Smoke test
     task:
       jobs:
-        - name: Install robot framework dependencies
+        - name: Run UI test
           commands:
             - checkout
-            - python -m venv .venv
-            - source .venv/bin/activate
             - python -m pip install --upgrade pip
             - pip install -r selenium-web-pom/requirements.txt
-            - 'pip show robotframework-pabot || (echo "Error: robotframework-pabot not installed" && exit 1)'
-            - cache store venv-cache .venv
+            - chmod +x run.sh
+            - ./run.sh
+            - artifact push workflow selenium-web-pom/test-results/
       prologue:
         commands:
           - sem-version python 3.12
       epilogue:
-        always:
-          commands:
-            - 'echo "Browser mode : $BROWSER_MODE"'
         on_pass:
           commands:
             - echo "Installation is successfull"
         on_fail:
           commands:
             - echo "Installation is unsuccessfull."
-      env_vars:
-        - name: BROWSER_MODE
-          value: head
-  - name: Test
-    task:
-      epilogue:
-        on_pass:
-          commands:
-            - echo "Tests are executed successfully"
-        on_fail:
-          commands:
-            - echo "Error occurred while executing robot tests"
-      jobs:
-        - name: Run robot tests
-          commands:
-            - checkout
-            - cache restore venv-cache .venv
-            - source .venv/bin/activate
-            - 'pip show robotframework-pabot || (echo "Error: robotframework-pabot not restored" && exit 1)'
-            - chmod +x run.sh
-            - ./run.sh
-after_pipeline:
-  task:
-    jobs:
-      - name: Collect test results
-        commands:
-          - checkout
-          - artifact push workflow selenium-web-pom/test-results/
+      env_vars: []
